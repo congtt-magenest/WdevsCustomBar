@@ -1,0 +1,11 @@
+<?php
+/** @var $escaper \Magento\Framework\Escaper */
+/** @var $viewModel \Wdevs\CustomBar\ViewModel\CustomBar */
+$viewModel = $block->getData('viewModel');
+
+?>
+<?php if ($content = $viewModel->getCustomerBarContent()): ?>
+<div class="panel header">
+    <span><?= $escaper->escapeHtml($content) ?></span>
+</div>
+<?php endif; ?>

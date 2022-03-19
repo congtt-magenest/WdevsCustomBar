@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Wdevs_CustomBar::css/custom-bar.css" />
+    </head>
+    <body>
+        <referenceContainer name="header.container">
+            <container name="wdevs.custom.bar" htmlClass="panel wrapper wdevs-custom-bar" htmlTag="div" before="header.panel.wrapper">
+                <block class="Magento\Framework\View\Element\Template" name="wdevs.custom.bar.content"
+                       template="Wdevs_CustomBar::custom-bar.phtml" ifconfig="custom_bar/general/enable">
+                    <arguments>
+                        <argument name="viewModel" xsi:type="object">Wdevs\CustomBar\ViewModel\CustomBar</argument>
+                    </arguments>
+                </block>
+            </container>
+        </referenceContainer>
+    </body>
+</page>
